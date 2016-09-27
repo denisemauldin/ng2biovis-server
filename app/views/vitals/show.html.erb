@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vital.name %>
+</p>
+
+<p>
+  <strong>Heartrate:</strong>
+  <%= @vital.heartrate %>
+</p>
+
+<p>
+  <strong>Bloodpressure:</strong>
+  <%= @vital.bloodpressure %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @vital.temperature %>
+</p>
+
+<%= link_to 'Edit', edit_vital_path(@vital) %> |
+<%= link_to 'Back', vitals_path %>
