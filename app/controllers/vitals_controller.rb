@@ -12,6 +12,16 @@ class VitalsController < ApplicationController
   def show
   end
 
+  # GET /vitals/search?<key>=<value>
+  def search
+    logger.debug(params.inspect);
+    (key, val) = params[:term].split(/:/)
+    logger.debug("key #{key} val #{val}")
+    @vital = Vital.where("#{key} like ?", "%#{val}%")
+    logger.debug(@vital.inspect)
+    render :json => @vital
+  end
+
   # GET /vitals/new
   def new
     @vital = Vital.new
